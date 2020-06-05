@@ -15,6 +15,7 @@
 		 on how to target different products -->
 	<!-- uncomment to enable plugin in all products -->
 	<depends>com.intellij.modules.lang</depends>
+	<depends>org.jetbrains.plugins.textmate</depends>
 
 	<application-components>
 		<component>
@@ -38,5 +39,6 @@
 				  language="Marko" extensions="marko" />
 		<completion.contributor implementationClass="org.wso2.lsp4intellij.contributors.LSPCompletionContributor"
 								id="LSPCompletionContributor" language="any"/>
+		<externalAnnotator id="LSPAnnotator" language="textmate" implementationClass="org.wso2.lsp4intellij.contributors.annotator.LSPAnnotator"/>
 	</extensions>
 </idea-plugin>
