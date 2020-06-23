@@ -43,7 +43,7 @@ public class MarkoJsPreloadingActivity extends PreloadingActivity {
             state = new TextMateSettings.TextMateSettingsState();
         }
 
-        final String bundlePath = new File(plugin.getPath(), "marko.tmbundle").getAbsolutePath();
+        final String bundlePath = new File(plugin.getPath(), "Marko.tmbundle").getAbsolutePath();
         final BundleConfigBean bundle = new BundleConfigBean(BUNDLE, bundlePath, true);
 
         state.setBundles(Collections.singleton(bundle));

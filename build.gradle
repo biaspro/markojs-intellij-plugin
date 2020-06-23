@@ -8,34 +8,6 @@ plugins {
     id "org.jetbrains.intellij" version "0.4.21"
 }
 
-wrapper {
-    gradleVersion = '5.2.1'
-}
-
-apply plugin: 'java'
-apply plugin: 'org.jetbrains.intellij'
-apply plugin: 'antlr'
-
-compileJava {
-    sourceCompatibility = '1.8'
-    targetCompatibility = '1.8'
-}
-
-repositories {
-    mavenCentral()
-    maven { url 'https://jitpack.io' }
-}
-
-dependencies {
-    implementation 'com.github.ballerina-platform:lsp4intellij:master-SNAPSHOT'
-    testCompile group: 'junit', name: 'junit', version: '4.11'
-}
-
-intellij {
-    version = '2020.1'
-    plugins = ['java', 'org.jetbrains.plugins.textmate']
-}
-
 copy {
     from './src/main/resources/language-server/server/dist'
     into 'build/idea-sandbox/plugins/markojs-intellij-plugin/server/dist'
@@ -49,7 +21,33 @@ copy {
 }
 
 copy {
-    from './src/main/resources/marko.tmbundle'
-    into 'build/idea-sandbox/plugins/markojs-intellij-plugin/marko.tmbundle'
+    from './src/main/resources/Marko.tmbundle'
+    into 'build/idea-sandbox/plugins/markojs-intellij-plugin/Marko.tmbundle'
     include '**'
+}
+
+wrapper {
+    gradleVersion = '5.2.1'
+}
+
+apply plugin: 'java'
+apply plugin: 'org.jetbrains.intellij'
+
+compileJava {
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'com.github.ballerina-platform:lsp4intellij:master-SNAPSHOT'
+}
+
+intellij {
+    version = '2020.1'
+    plugins = ['java', 'org.jetbrains.plugins.textmate']
 }

@@ -1,8 +1,8 @@
 <idea-plugin>
 	<id>org.jetbrains.markojs</id>
-	<name>MarkoJS Intellij</name>
+	<name>MarkoJS</name>
 	<version>0.1</version>
-	<vendor url="https://github.com/biaspro/markojs-intellij-plugin">MarkoJS Jetbrains Plugin</vendor>
+	<vendor url="https://github.com/biaspro/markojs-intellij-plugin">MarkoJS Plugin</vendor>
 	<description> <![CDATA[
       Marko tooling for IntelliJ, powered by <a href="https://github.com/marko-js/language-server/tree/master/server">Marko Language Server</a>.
     ]]></description>
@@ -39,6 +39,6 @@
 				  language="Marko" extensions="marko" />
 		<completion.contributor implementationClass="org.wso2.lsp4intellij.contributors.LSPCompletionContributor"
 								id="LSPCompletionContributor" language="any"/>
-		<externalAnnotator id="LSPAnnotator" language="textmate" implementationClass="org.wso2.lsp4intellij.contributors.annotator.LSPAnnotator"/>
+		<externalAnnotator id="LSPAnnotator" language="TEXT" implementationClass="org.wso2.lsp4intellij.contributors.annotator.LSPAnnotator"/>
 	</extensions>
 </idea-plugin>
